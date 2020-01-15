@@ -37,12 +37,13 @@ body {
 
 .bottom-container {
     border-radius: 15px;
+    overflow: hidden;
     margin-top: 1.8rem;
     width:70%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    overflow: hidden;
+    
 }
 
 .bottom-container > div {
@@ -62,27 +63,23 @@ p {
     font-size: 1.5rem;
 }
 
-a {
+button {
+    border: none;
     border-radius:7px;
     font-size:1.2rem;
     text-align: center;
     cursor: pointer;
     padding: 1rem;
     margin-left: 0.5rem;
-    width: 6rem;
+    width: 10%;
 
-}
-
-.button-copy {
-    margin-right: 30px;
 }
 
 .button-generate {
-    color: black;
-    background-color: red;
+    background-color: greenyellow;
 }
 
 .button-stop {
-    background-color: greenyellow;
+    background-color: red;
 }
 

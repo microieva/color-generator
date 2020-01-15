@@ -11,9 +11,9 @@
         <div class="top-container">
             <h1>Hexadecimal Color Generator</h1>
             <div class="div-ui">
-                <input class="input" placeholder="Enter 5 characters"/>
-                <a class="button-generate">Generate</a>
-                <a class="button-stop">Stop</a>
+                <input class="input" placeholder="Enter a number greater than 5 ..."/>
+                <button class="button-generate">Generate</button>
+                <button class="button-stop">Stop</button>
             </div>
             <p>Colors change people's <i>emotions</i>, so use meaningful colors on your site.</p>
         </div>
@@ -26,10 +26,11 @@
         const bottomContainer = document.querySelector('.bottom-container')
         const generateButton = document.querySelector('.button-generate')
         const stopButton = document.querySelector('.button-stop')
+        const input = document.querySelector('.input')
 
+        
         const generateHexaColor = () => {
             let string = '0123456789abcdef'
-
             let hexaColor = '#'
             for (let i = 0; i < 6; i++) {
                 let index = Math.floor(Math.random() * string.length)
@@ -37,33 +38,44 @@
             }
             return hexaColor
         }
-        
-        
-        for (let i = 0; i < 5; i++) {
+
+        let j = 5;
+        generateButton.addEventListener('click', () => {
+            j = 10
+            console.log("onclick generate ", j)
+        })
+
+        for (let i = 0; i < j; i++) {
             const title = document.createElement('h2')
             const div = document.createElement('div')
-            const copyButton = document.createElement('a')
+            const copyButton = document.createElement('button')
 
-            // div.setAttribute('class', 'num')
-            // div.setAttribute('id', 'num-' + i)
-
-            title.style.margin = '3rem'
+            title.style.margin = '10rem'
             copyButton.textContent = 'Copy'
             copyButton.style.backgroundColor = "lightgrey"
-            copyButton.style.margin = '3rem'
-
-                setInterval(function () {
-                    let bgColor = generateHexaColor()
-                    title.textContent = bgColor
-                    div.style.background = bgColor
-                    
-                    // copyButton.style.alignSelf = 
-                }, 4000)
-            
+            copyButton.style.margin = '10rem'
+                
             div.appendChild(title)
             div.appendChild(copyButton)
             bottomContainer.append(div)
+
+            const interval = setInterval(() => {
+                let generatedColor = generateHexaColor();
+                title.textContent = generatedColor;
+                div.style.background = generatedColor;        
+            }, 2000)
+
+            stopButton.addEventListener('click', () => {
+                console.log("testing stop")
+                clearInterval(interval)
+            })    
         }
+        
+        
+        
+
+        
+        
 
 
     </script>
