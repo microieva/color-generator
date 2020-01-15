@@ -1,0 +1,88 @@
+
+/* * {
+    box-sizing: border-box;
+} */
+body {
+    font-family: Arial, Helvetica;
+    color: #161617;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.top-container {
+    
+    border-radius: 15px;
+    width:70%;
+    background: #b373ba;
+}
+
+.div-ui {
+    display: flex;
+    justify-content: center;
+
+}
+
+.input {
+    width: 30rem;
+    border-radius: 7px;
+    padding: 15px;
+    margin-right: 3.5rem;
+    font-size: 18px;
+}
+
+.bottom-container {
+    border-radius: 15px;
+    margin-top: 1.8rem;
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.bottom-container > div {
+    background: gray;
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    align-items: center;
+    
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+a {
+    border-radius:7px;
+    font-size:1.2rem;
+    text-align: center;
+    cursor: pointer;
+    padding: 1rem;
+    margin-left: 0.5rem;
+    width: 6rem;
+
+}
+
+.button-copy {
+    margin-right: 30px;
+}
+
+.button-generate {
+    color: black;
+    background-color: red;
+}
+
+.button-stop {
+    background-color: greenyellow;
+}
+

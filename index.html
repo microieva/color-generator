@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Color Generator</title>
+    <title>COLOR GENERATOR</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <wrapper class="container-main">
-        <section></section>
+    <div class="container">
+        <div class="top-container">
+            <h1>Hexadecimal Color Generator</h1>
+            <div class="div-ui">
+                <input class="input" placeholder="Enter 5 characters"/>
+                <a class="button-generate">Generate</a>
+                <a class="button-stop">Stop</a>
+            </div>
+            <p>Colors change people's <i>emotions</i>, so use meaningful colors on your site.</p>
+        </div>
+        
+        <div class="bottom-container"></div>
+    </div>
 
-        <section>
+
+    <script>
+        const bottomContainer = document.querySelector('.bottom-container')
+        const generateButton = document.querySelector('.button-generate')
+        const stopButton = document.querySelector('.button-stop')
+
+        const generateHexaColor = () => {
+            let string = '0123456789abcdef'
+
+            let hexaColor = '#'
+            for (let i = 0; i < 6; i++) {
+                let index = Math.floor(Math.random() * string.length)
+                hexaColor += string[index]
+            }
+            return hexaColor
+        }
+        
+        
+        for (let i = 0; i < 5; i++) {
+            const title = document.createElement('h2')
+            const div = document.createElement('div')
+            const copyButton = document.createElement('a')
+
+            // div.setAttribute('class', 'num')
+            // div.setAttribute('id', 'num-' + i)
+
+            title.style.margin = '3rem'
+            copyButton.textContent = 'Copy'
+            copyButton.style.backgroundColor = "lightgrey"
+            copyButton.style.margin = '3rem'
+
+                setInterval(function () {
+                    let bgColor = generateHexaColor()
+                    title.textContent = bgColor
+                    div.style.background = bgColor
+                    
+                    // copyButton.style.alignSelf = 
+                }, 4000)
             
-        </section>
+            div.appendChild(title)
+            div.appendChild(copyButton)
+            bottomContainer.append(div)
+        }
 
-    </wrapper>
-    <script src="app.js"></script>
-    
+
+    </script>
 </body>
+
 </html>
