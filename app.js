@@ -15,7 +15,7 @@ const generateHexaColor = () => {
     return hexaColor
 }
 
-const generate = (j=5) => {
+const run = (j=5) => {
     for (let i = 0; i < j; i++) {
         const title = document.createElement('h2')
         const div = document.createElement('div')
@@ -57,7 +57,7 @@ const generate = (j=5) => {
                 
         copyButton.addEventListener('mouseout', () => {
             bottomContainer.textContent = '';
-            generate()
+            run()
                     
         })
     }
@@ -65,16 +65,30 @@ const generate = (j=5) => {
         
 generateButton.addEventListener('click', () => {
     bottomContainer.textContent = '';
-
-    if (input.value > 5) {
-        generate(input.value)
-    } else if (input.value == null) {
-        generate(5)
-    } else {
-        alert("The number must be greater than 5");
-        generate(5);
+    let inputValue = input.value;
+    // if (inputValue > 5) {
+    //     run(inputValue)
+    // } else if (inputValue == null) {
+    //     run(5)
+    // } else {
+    //     alert("The number must be greater than 5");
+    //     run(5);
+    // }
+    switch(inputValue) {
+        case inputValue < 5:
+            alert("The number must be greater than 5");
+            inputValue = null;
+            run(5);
+            break;
+        case inputValue > 5:
+            run(inputValue);
+            inputValue = null;
+            break;
+        default:
+            run(5) 
+            break;
     }
-    input.value = null;
+        
 })
                
-generate();
+run();
