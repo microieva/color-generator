@@ -62,32 +62,43 @@ const run = (j=5) => {
         })
     }
 }
+
+const errorMsg = () => {
+    const errorMsg = document.querySelector('p');
+    errorMsg.textContent = "The number must be greater than 5"
+    errorMsg.style.color = "red"
+    document.getElementById('div-ui').appendChild(errorMsg)
+    run(5);
+    return errorMsg;
+}
         
-generateButton.addEventListener('click', () => {
+generateButton.addEventListener('click', () => {    
     bottomContainer.textContent = '';
-    let inputValue = input.value;
-    // if (inputValue > 5) {
-    //     run(inputValue)
-    // } else if (inputValue == null) {
-    //     run(5)
-    // } else {
-    //     alert("The number must be greater than 5");
-    //     run(5);
-    // }
-    switch(inputValue) {
-        case inputValue < 5:
-            alert("The number must be greater than 5");
-            inputValue = null;
-            run(5);
-            break;
-        case inputValue > 5:
-            run(inputValue);
-            inputValue = null;
-            break;
-        default:
-            run(5) 
-            break;
+
+    if (input.value > 5) {
+        run(input.value)
+    } else if (input.value == null) {
+        run(5)
+    } else if (input.value < 5 || input.value == NaN) {
+        alert("Must be a number greater than 5")
+        run(5)
     }
+    input.value = null;
+
+    // switch(inputValue) {
+    //     case inputValue < 5:
+    //         alert("The number must be greater than 5");
+    //         inputValue = null;
+    //         run(5);
+    //         break;
+    //     case inputValue > 5:
+    //         run(inputValue);
+    //         inputValue = null;
+    //         break;
+    //     default:
+    //         run(5) 
+    //         break;
+    // }
         
 })
                
