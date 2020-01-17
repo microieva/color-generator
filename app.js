@@ -92,5 +92,5 @@ const mouseOut = (copyButton) => {
     })
 }
 
-//runs initial session
+//runs initial session!
 run();
