@@ -54,7 +54,6 @@ generateButton.addEventListener('click', () => {
         alert("Must be a number greater than 5")
         run()
         input.value = null;
-        errorMsg = document.querySelector('p');
     } else {    
         run(input.value)
     }  
