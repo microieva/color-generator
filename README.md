@@ -1,6 +1,6 @@
 ## Hexadecimal Color Generator
 
-## PROTOTYPE
+### PROTOTYPE
 ![](prototype.png)
 
 ### [DEMO](https://microieva.github.io/color-generator/)
