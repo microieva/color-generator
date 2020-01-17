@@ -15,7 +15,7 @@ body {
     
     border-radius: 15px;
     width:70%;
-    background: #b373ba;
+    background: #E5BCD2;
 }
 
 .div-ui {
@@ -44,7 +44,7 @@ body {
 }
 
 .bottom-container > div {
-    background: gray;
+    /* background: gray; */
     display: flex;
     justify-content: space-between;
     height: 120px;
@@ -67,7 +67,7 @@ button {
     text-align: center;
     cursor: pointer;
     padding: 1rem;
-    margin-left: 0.5rem;
+    margin-left: 1.6rem;
     width: 10%;
 
 }

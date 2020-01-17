@@ -63,25 +63,25 @@ const run = (j=5) => {
     }
 }
 
-const errorMsg = () => {
-    const errorMsg = document.querySelector('p');
-    errorMsg.textContent = "The number must be greater than 5"
-    errorMsg.style.color = "red"
-    document.getElementById('div-ui').appendChild(errorMsg)
-    run(5);
-    return errorMsg;
-}
+// const errorMsg = () => {
+//      const errorMsg = document.querySelector('p');
+//      errorMsg.textContent = "The number must be greater than 5"
+//      errorMsg.style.color = "red"
+//      document.getElementById('div-ui').appendChild(errorMsg)
+//      run(5);
+
+// }
         
 generateButton.addEventListener('click', () => {    
     bottomContainer.textContent = '';
 
-    if (input.value > 5) {
+    if (input.value == null) {
+        run()
+    } else if (input.value < 5 ) {
+        // alert("Must be a number greater than 5")
+        run()
+    } else {    
         run(input.value)
-    } else if (input.value == null) {
-        run(5)
-    } else if (input.value < 5 || input.value == NaN) {
-        alert("Must be a number greater than 5")
-        run(5)
     }
     input.value = null;
 
