@@ -1,5 +1,4 @@
 
-
 const bottomContainer = document.querySelector('.bottom-container')
 const generateButton = document.querySelector('.button-generate')
 const stopButton = document.querySelector('.button-stop')
@@ -49,11 +48,16 @@ const run = (j=5) => {
 generateButton.addEventListener('click', () => {    
     bottomContainer.textContent = '';
 
-    if (input.value == null || input.value < 5) {
+    if (input.value == "") {
         run()
-    // } else if ( ) {
-    //     // alert("Must be a number greater than 5")
-    //     run()
+    } else if (input.value < 5 ) {
+        alert("Must be a number greater than 5")
+        // const errorMsg = document.getElementById('instruction').textContent = "Must be a number greater than 5";
+        // errorMsg.style.color = 'red';
+        
+        run()
+        input.value = null;
+        errorMsg = document.querySelector('p');
     } else {    
         run(input.value)
     }  
