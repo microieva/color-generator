@@ -18,8 +18,9 @@ const generateHexaColor = () => {
 //running 
 const run = (j=5) => {
     for (let i = 0; i < j; i++) {
-        const title = document.createElement('h2')
+        
         const div = document.createElement('div')
+        const title = document.createElement('h2')
         const copyButton = document.createElement('button')
 
         title.style.margin = '10rem'
