@@ -27,15 +27,16 @@ const run = (j=5) => {
         copyButton.textContent = 'Copy'
         copyButton.style.backgroundColor = "lightgrey"
         copyButton.style.margin = '10rem'
-                    
+        
+        bottomContainer.append(div)
         div.appendChild(title)
         div.appendChild(copyButton)
-        bottomContainer.append(div)
+        //bottomContainer.append(div)
 
-        const interval = setInterval(() => {
+        const interval = setInterval(() => {    
             let generatedColor = generateHexaColor();
             title.textContent = generatedColor;
-            div.style.background = generatedColor;        
+            div.style.background = generatedColor;    
         }, 2000)
 
         stop(interval);
@@ -74,7 +75,8 @@ const copy = (copyButton, title) => {
         textArea.value = code;
         document.body.appendChild(textArea);
         textArea.select();
-        document.execCommand('copy')
+        document.execCommand('copy');
+        copyButton.textContent = 'Copied!'
         console.log(code)
         textArea.remove();
     })
@@ -89,7 +91,8 @@ const mouseOver = (copyButton, interval) => {
 const mouseOut = (copyButton) => {
     copyButton.addEventListener('mouseout', () => {
         bottomContainer.textContent = '';
-        run()            
+        run();
+                    
     })
 }
 
