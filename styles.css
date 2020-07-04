@@ -12,7 +12,6 @@ body {
 }
 
 .top-container {
-    
     border-radius: 15px;
     width:70%;
     background: #E5BCD2;
@@ -21,7 +20,7 @@ body {
 .div-ui {
     display: flex;
     justify-content: center;
-
+    margin-bottom: 12px;
 }
 
 .input {
@@ -52,12 +51,18 @@ body {
     
 }
 
+spam {
+    font-size: 1rem;
+    margin-top:10px;
+}
+
 h1 {
     font-size: 3em;
 }
 
 p {
     font-size: 1.5rem;
+    margin: 18px 0 24px 0;
 }
 
 button {

@@ -3,11 +3,15 @@ const bottomContainer = document.querySelector('.bottom-container')
 const generateButton = document.querySelector('.button-generate')
 const stopButton = document.querySelector('.button-stop')
 const input = document.querySelector('.input')
+const msg = document.querySelector('.msg')
+const spam = document.createElement('spam')
+
+spam.textContent = "Please choose a number greater than 5!"
 
 //returns random generated id
 const generateHexaColor = () => {
-    let string = '0123456789abcdef'
-    let hexaColor = '#'
+    let string = "0123456789abcdef"
+    let hexaColor = "#"
     for (let i = 0; i < 6; i++) {
         let index = Math.floor(Math.random() * string.length)
         hexaColor += string[index]
@@ -25,13 +29,12 @@ const run = (j=5) => {
 
         title.style.margin = '10rem'
         copyButton.textContent = 'Copy'
-        copyButton.style.backgroundColor = "lightgrey"
+        copyButton.style.backgroundColor = 'lightgrey'
         copyButton.style.margin = '10rem'
         
         bottomContainer.append(div)
         div.appendChild(title)
         div.appendChild(copyButton)
-        //bottomContainer.append(div)
 
         const interval = setInterval(() => {    
             let generatedColor = generateHexaColor();
@@ -53,13 +56,18 @@ generateButton.addEventListener('click', () => {
     if (input.value == "") {
         run()
     } else if (input.value < 5 ) {
-        alert("Must be a number greater than 5")
-        run()
-        input.value = null;
-    } else {    
+        spam.style.color = 'red'
+        spam.style.visibility = 'visible'
+        msg.insertBefore(spam, msg.firstChild)
+        run(5)
+        input.value = "";
+    } else {  
+        if (spam.style.visibility = 'visible') {
+            spam.style.visibility = 'hidden'
+        }  
         run(input.value)
     }  
-    input.value = null;
+    input.value = "";
 })
 
 const stop = (interval) => {
@@ -76,7 +84,7 @@ const copy = (copyButton, title) => {
         document.body.appendChild(textArea);
         textArea.select();
         document.execCommand('copy');
-        copyButton.textContent = 'Copied!'
+        copyButton.textContent = "Copied!"
         console.log(code)
         textArea.remove();
     })
@@ -90,7 +98,7 @@ const mouseOver = (copyButton, interval) => {
 
 const mouseOut = (copyButton) => {
     copyButton.addEventListener('mouseout', () => {
-        bottomContainer.textContent = '';
+        //bottomContainer.textContent = '';
         run();
                     
     })
