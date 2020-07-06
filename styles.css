@@ -9,46 +9,68 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    margin-top: 1rem;
 }
 
 .top-container {
     border-radius: 15px;
-    width:70%;
+    min-width: 800px;
     background: #E5BCD2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .div-ui {
     display: flex;
-    justify-content: center;
-    margin-bottom: 12px;
+    justify-content: space-between;
+    height: 2.5rem;
 }
 
 .input {
-    width: 30rem;
+    width: 20rem;
     border-radius: 7px;
-    padding: 15px;
-    margin-right: 3.5rem;
-    font-size: 18px;
+    text-indent: 15px;
+    font-size: 1rem;
+    margin-right: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 2rem;
+}
+
+button {
+    border: none;
+    border-radius:7px;
+    font-size:1rem;
+    text-align: center;
+    cursor: pointer;
+    width: 7rem;
+    height: 2.5rem;
+}
+
+.msg {
+    display: flex;
+    flex-direction: column;
 }
 
 .bottom-container {
     border-radius: 15px;
     overflow: hidden;
-    margin-top: 1.8rem;
-    width:70%;
+    margin-top: 1rem;
+    min-width: 800px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    
 }
 
 .bottom-container > div {
-    /* background: gray; */
     display: flex;
     justify-content: space-between;
-    height: 120px;
+    height: 6rem;
     align-items: center;
-    
+    padding: 0 5rem;
 }
 
 spam {
@@ -57,28 +79,16 @@ spam {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 p {
-    font-size: 1.5rem;
-    margin: 18px 0 24px 0;
-}
-
-button {
-    border: none;
-    border-radius:7px;
-    font-size:1.2rem;
-    text-align: center;
-    cursor: pointer;
-    padding: 1rem;
-    margin-left: 1.6rem;
-    width: 10%;
-
+    font-size: 1.3rem;
 }
 
 .button-generate {
     background-color: greenyellow;
+    margin-right: 1rem;
 }
 
 .button-stop {

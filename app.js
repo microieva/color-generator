@@ -24,13 +24,13 @@ const run = (j=5) => {
     for (let i = 0; i < j; i++) {
         
         const div = document.createElement('div')
-        const title = document.createElement('h2')
+        const title = document.createElement('h3')
         const copyButton = document.createElement('button')
 
-        title.style.margin = '10rem'
         copyButton.textContent = 'Copy'
         copyButton.style.backgroundColor = 'lightgrey'
-        copyButton.style.margin = '10rem'
+        
+
         
         bottomContainer.append(div)
         div.appendChild(title)
@@ -98,7 +98,7 @@ const mouseOver = (copyButton, interval) => {
 
 const mouseOut = (copyButton) => {
     copyButton.addEventListener('mouseout', () => {
-        //bottomContainer.textContent = '';
+        bottomContainer.textContent = '';
         run();
                     
     })
