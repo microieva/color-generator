@@ -4,11 +4,10 @@ const generateButton = document.querySelector('.button-generate')
 const stopButton = document.querySelector('.button-stop')
 const input = document.querySelector('.input')
 const msg = document.querySelector('.msg')
-const spam = document.createElement('spam')
+const span = document.createElement('span')
 
-spam.textContent = "Please choose a number greater than 5!"
+span.textContent = "Please choose a number greater than 5!"
 
-//returns random generated id
 const generateHexaColor = () => {
     let string = "0123456789abcdef"
     let hexaColor = "#"
@@ -19,7 +18,6 @@ const generateHexaColor = () => {
     return hexaColor
 }
 
-//running 
 const run = (j=5) => {
     for (let i = 0; i < j; i++) {
         
@@ -56,14 +54,14 @@ generateButton.addEventListener('click', () => {
     if (input.value == "") {
         run()
     } else if (input.value < 5 ) {
-        spam.style.color = 'red'
-        spam.style.visibility = 'visible'
-        msg.insertBefore(spam, msg.firstChild)
+        span.style.color = 'red'
+        span.style.visibility = 'visible'
+        msg.insertBefore(span, msg.firstChild)
         run(5)
         input.value = "";
     } else {  
-        if (spam.style.visibility = 'visible') {
-            spam.style.visibility = 'hidden'
+        if (span.style.visibility = 'visible') {
+            span.style.visibility = 'hidden'
         }  
         run(input.value)
     }  
